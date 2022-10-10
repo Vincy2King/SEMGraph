@@ -10,11 +10,6 @@ import tensorflow.compat.v1 as tf
 
 tf.compat.v1.disable_eager_execution()
 
-'''
-sst2_word_sent7:best
-sts_word_sent7
-mr_word_sent7
-'''
 
 from sklearn import metrics
 import pickle as pkl
@@ -34,13 +29,7 @@ flags.DEFINE_string('dataset', 'sst2_word_sent7', 'Dataset string.')  # 'mr','oh
 flags.DEFINE_string('model', 'gnn', 'Model string.')
 # 0是每个特征都加了sentiment；1是没有加sentiment；2是总的加了sentiment
 flags.DEFINE_string('weight_type', '2', 'Model string.')
-# 0.005  1024 200 sts
-# 200  16 sst2 0.01 0.78 0.5
-# 200  16 sst2 0.0001 0.79 0.5
-# 200  8 sst2 0.0002 0.72 0.8
-# 200  8 sst2 0.0005  0.9 5e-4
-# 200  4 sst2 0.00005  0.5 5e-4  7
-# 0.00004 200 7 0.5 0 -2
+
 flags.DEFINE_float('learning_rate', 5e-3, 'Initial learning rate.')
 flags.DEFINE_integer('epochs', 200, 'Number of epochs to train.')
 flags.DEFINE_integer('batch_size',256,'Size of batches per epoch.')
